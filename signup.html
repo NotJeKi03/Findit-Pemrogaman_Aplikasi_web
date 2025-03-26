@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - FindIt</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #ffffff;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        max-width: 900px;
+      }
+      .form-container {
+        flex: 1;
+        padding: 20px;
+      }
+      .image-container {
+        flex: 1;
+        text-align: center;
+      }
+      .image-container img {
+        width: 60%;
+      }
+      h2 {
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
+      .input-group {
+        margin-bottom: 15px;
+      }
+      .input-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .input-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      .login-button {
+        width: 100%;
+        padding: 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .login-button:hover {
+        background: #0056b3;
+      }
+      .social-login {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+      }
+      .social-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        width: 48%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        text-align: center;
+      }
+      .social-button img {
+        width: 20px;
+        margin-right: 5px;
+      }
+      .signup-link {
+        text-align: center;
+        margin-top: 10px;
+      }
+      .or-text {
+        text-align: center;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <h2>Get Started Now</h2>
+        <form action="proses.php" method="POST">
+          <div class="input-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <button type="submit" class="login-button">Sign Up</button>
+          <p class="or-text">or</p>
+        </form>
+        <div class="social-login">
+          <button class="social-button">
+            <img src="google-logo.png" alt="Google" /> Sign in with Google
+          </button>
+          <button class="social-button">
+            <img src="apple-logo.png" alt="Apple" /> Sign in with Apple
+          </button>
+        </div>
+        <p class="signup-link">Have an account? <a href="#">Sign In</a></p>
+      </div>
+      <div class="image-container">
+        <img src="findit-logo.png" alt="FindIt Logo" />
+      </div>
+    </div>
+  </body>
+</html>
