@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FindIt - Detail Barang</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-100">
+    <header
+      class="bg-white shadow-md border-b p-5 flex items-center justify-between fixed top-0 left-0 right-0 z-10"
+    >
+      <img src="logo.png" alt="Logo FindIt" class="w-40 h-auto" />
+      <a href="#" class="mr-8">
+        <i data-feather="user" class="text-gray-700 w-12 h-12"></i>
+      </a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow mt-24 flex items-center justify-center">
+      <div
+        class="w-full max-w-6xl bg-white shadow-lg rounded-lg p-10 flex flex-col md:flex-row items-start gap-12 h-full"
+      >
+        <!-- Image & Thumbnails -->
+        <div class="flex gap-6 items-center">
+          <!-- Thumbnail Column -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="thumb1.jpg"
+              alt="Thumbnail 1"
+              class="w-16 h-16 border rounded cursor-pointer object-contain"
+            />
+            <img
+              src="thumb2.jpg"
+              alt="Thumbnail 2"
+              class="w-16 h-16 border rounded cursor-pointer object-contain"
+            />
+            <img
+              src="thumb3.jpg"
+              alt="Thumbnail 3"
+              class="w-16 h-16 border rounded cursor-pointer object-contain"
+            />
+          </div>
+          <!-- Main Image -->
+          <img
+            src="iphone14.jpg"
+            alt="iPhone 14 Pro Max"
+            class="w-[450px] h-[550px] object-contain rounded shadow"
+          />
+        </div>
+
+        <!-- Details Section -->
+        <div class="flex-1 mt-12">
+          <h2 class="text-3xl font-bold mb-6">Apple iPhone 14 Pro Max</h2>
+          <h3 class="text-2xl font-semibold text-blacl-700 mb-6">Detail</h3>
+          <p class="text-lg text-gray-600 mb-8">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
+            purus at quam ultricies tincidunt. Vestibulum at augue ac lacus
+            tincidunt bibendum.
+          </p>
+          <button
+            class="bg-blue-500 text-white text-lg px-6 py-3 rounded flex items-center space-x-3"
+          >
+            <i data-feather="message-circle" class="w-6 h-6"></i>
+            <span>Chat</span>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
