@@ -9,6 +9,104 @@
       rel="stylesheet"
     />
     <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+      @font-face {
+        font-family: "Marykate";
+        src: url("MaryKate.ttf") format("truetype");
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background: #f8f8f8;
+        padding: 10px 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .logo {
+        font-family: "Marykate", sans-serif;
+        font-size: clamp(24px, 5vw, 50px);
+        color: #008ecc;
+      }
+
+      .logo span {
+        color: inherit; 
+      }
+
+      .user-icon {
+        font-size: clamp(24px, 5vw, 50px); 
+        cursor: pointer;
+      }
+
+      .product-container {
+        display: flex;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+      }
+
+      .image-section {
+        display: flex;
+        align-items: center; 
+        gap: 15px; 
+      }
+
+      .thumbnail-container {
+        display: flex;
+        flex-direction: column; 
+        gap: 10px; 
+      }
+
+      .thumbnail {
+        width: 60px; 
+        height: 60px; 
+        object-fit: contain;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .thumbnail:hover {
+        transform: scale(1.1);
+      }
+
+      .main-image {
+        width: 300px; 
+        border-radius: 10px;
+      }
+
+      .details-section {
+        flex: 1;
+      }
+
+      .chat-btn {
+        background: #008ecc;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+      }
+
+      .chat-btn:hover {
+        background: #007bb5;
+      }
+    </style>
   </head>
   <body class="flex flex-col min-h-screen bg-gray-100">
     <header
@@ -20,14 +118,11 @@
       </a>
     </header>
 
-    <!-- Main Content -->
     <main class="flex-grow mt-24 flex items-center justify-center">
       <div
         class="w-full max-w-6xl bg-white shadow-lg rounded-lg p-10 flex flex-col md:flex-row items-start gap-12 h-full"
       >
-        <!-- Image & Thumbnails -->
         <div class="flex gap-6 items-center">
-          <!-- Thumbnail Column -->
           <div class="flex flex-col gap-4">
             <img
               src="thumb1.jpg"
@@ -45,7 +140,6 @@
               class="w-16 h-16 border rounded cursor-pointer object-contain"
             />
           </div>
-          <!-- Main Image -->
           <img
             src="iphone14.jpg"
             alt="iPhone 14 Pro Max"
@@ -53,7 +147,6 @@
           />
         </div>
 
-        <!-- Details Section -->
         <div class="flex-1 mt-12">
           <h2 class="text-3xl font-bold mb-6">Apple iPhone 14 Pro Max</h2>
           <h3 class="text-2xl font-semibold text-blacl-700 mb-6">Detail</h3>
