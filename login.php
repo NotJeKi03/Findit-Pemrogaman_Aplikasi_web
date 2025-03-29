@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include 'model/config.php';
 
 $email = '';
 $password = '';
@@ -9,15 +9,11 @@ if (isset($_POST['login'])) {
   $password = $_POST['password'];
 }
 
-$sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
-$result = mysqli_query($conn, $sql);
-$row = mysqli_fetch_assoc($result);
-$count = mysqli_num_rows($result);
-$count = mysqli_num_rows($result);
+$sql = "SELECT * FROM daftar WHERE email='$email' AND password='$password'";
 
-if ($count > 0) {
-  session_start();
-  $_SESSION['email'] = $row['email'];
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+  $data = $result->fetch_assoc();
   header("Location: CariPage.php");
   exit();
 } else {
