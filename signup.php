@@ -26,7 +26,7 @@
       <div class="pe-px">
         <h1 class="text-4xl font-semibold pb-4">Get Started Now</h1>
       </div>
-      <form action="proses.php" method="POST" class="flex flex-col gap-4">
+      <form action="model/proses.php" method="POST" class="flex flex-col gap-4">
         <p class="font-semibold">Name</p>
         <input
           id="name"
