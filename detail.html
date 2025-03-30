@@ -10,23 +10,27 @@
     />
     <script src="https://unpkg.com/feather-icons"></script>
     <style>
+      /* Import Font Marykate */
       @font-face {
         font-family: "Marykate";
         src: url("MaryKate.ttf") format("truetype");
       }
 
+      /* General Styles */
       body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
       }
 
+      /* Header Styling */
       header {
         background: #f8f8f8;
         padding: 10px 20px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       }
 
+      /* Flexbox for Logo and User Icon */
       .header-container {
         display: flex;
         justify-content: space-between;
@@ -42,14 +46,15 @@
       }
 
       .logo span {
-        color: inherit; 
+        color: inherit; /* Supaya tidak berubah warna */
       }
 
       .user-icon {
-        font-size: clamp(24px, 5vw, 50px); 
+        font-size: clamp(24px, 5vw, 50px); /* Ukuran sama dengan FindIt */
         cursor: pointer;
       }
 
+      /* Product Container */
       .product-container {
         display: flex;
         gap: 20px;
@@ -58,22 +63,24 @@
         padding: 20px;
       }
 
+      /* Image Section */
       .image-section {
         display: flex;
-        align-items: center; 
-        gap: 15px; 
+        align-items: center; /* Agar gambar dan thumbnail sejajar */
+        gap: 15px; /* Jarak antara thumbnail & gambar utama */
       }
 
+      /* Thumbnail ada di sebelah kiri */
       .thumbnail-container {
         display: flex;
-        flex-direction: column; 
-        gap: 10px; 
+        flex-direction: column; /* Menyusun thumbnail secara vertikal */
+        gap: 10px; /* Jarak antar thumbnail */
       }
 
       .thumbnail {
-        width: 60px; 
-        height: 60px; 
-        object-fit: contain;
+        width: 60px; /* Sesuaikan ukuran */
+        height: 60px; /* Pastikan proporsional */
+        object-fit: contain; /* Mencegah melar */
         border-radius: 5px;
         cursor: pointer;
         transition: 0.3s;
@@ -83,11 +90,13 @@
         transform: scale(1.1);
       }
 
+      /* Gambar utama */
       .main-image {
-        width: 300px; 
+        width: 300px; /* Sesuaikan ukuran */
         border-radius: 10px;
       }
 
+      /* Details Section */
       .details-section {
         flex: 1;
       }
@@ -118,11 +127,14 @@
       </a>
     </header>
 
+    <!-- Main Content -->
     <main class="flex-grow mt-24 flex items-center justify-center">
       <div
         class="w-full max-w-6xl bg-white shadow-lg rounded-lg p-10 flex flex-col md:flex-row items-start gap-12 h-full"
       >
+        <!-- Image & Thumbnails -->
         <div class="flex gap-6 items-center">
+          <!-- Thumbnail Column -->
           <div class="flex flex-col gap-4">
             <img
               src="thumb1.jpg"
@@ -140,6 +152,7 @@
               class="w-16 h-16 border rounded cursor-pointer object-contain"
             />
           </div>
+          <!-- Main Image -->
           <img
             src="iphone14.jpg"
             alt="iPhone 14 Pro Max"
@@ -147,6 +160,7 @@
           />
         </div>
 
+        <!-- Details Section -->
         <div class="flex-1 mt-12">
           <h2 class="text-3xl font-bold mb-6">Apple iPhone 14 Pro Max</h2>
           <h3 class="text-2xl font-semibold text-blacl-700 mb-6">Detail</h3>
