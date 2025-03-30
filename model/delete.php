@@ -3,7 +3,7 @@ include 'config.php';
 if ($conn->connect_error) {
     die("Koneksi gagal: " . $conn->connect_error);
 }
-$sql = "DELETE FROM daftar WHERE name='Caca'";
+$sql = "DELETE FROM daftar WHERE name='Nca'";
 if ($conn->query($sql) === TRUE) {
     echo "Data berhasil dihapus";
 } else {
