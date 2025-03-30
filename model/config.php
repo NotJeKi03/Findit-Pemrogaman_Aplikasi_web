@@ -1,10 +1,12 @@
 <?php
 $host = "localhost";
 $user = "root";
-$password = "";
-$database = "account";
-$conn = new mysqli($host, $user , $password, $database);
-if ($conn->connect_error) {
- die("Koneksi gagal: " . $conn->connect_error);
+$pass = "";
+$db   = "account";
+
+$conn = mysqli_connect($host, $user, $pass, $db);
+
+if (!$conn) {
+    die("Koneksi gagal: " . mysqli_connect_error());
 }
 ?>
