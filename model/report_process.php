@@ -16,7 +16,7 @@ $nama_barang = $_POST['nama_barang'];
 $nomor_penghubung = $_POST['nomor_penghubung'];
 $deskripsi_barang = $_POST['deskripsi_barang'];
 
-$target_dir = "uploads/";
+$target_dir = $_SERVER['DOCUMENT_ROOT'] . "/uploads/";
 $foto1 = uploadFile('foto1', $target_dir);
 $foto2 = uploadFile('foto2', $target_dir);
 $foto3 = uploadFile('foto3', $target_dir);
