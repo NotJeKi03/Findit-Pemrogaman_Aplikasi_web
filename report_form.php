@@ -167,8 +167,10 @@
         <button type="submit" class="btn btn-primary submit-btn">Submit</button>
       </form>
     </div>
-    <footer class="footer">© 2024 All rights reserved. FindIt.</footer>
   </div>
+  <footer class="text-center mt-4">
+  <footer class="footer">© 2024 All rights reserved. FindIt.</footer>
+  </footer>
   
   <!-- Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

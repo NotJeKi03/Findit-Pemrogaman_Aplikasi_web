@@ -1,112 +1,4 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FindIt - Buat Laporan Baru</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-    }
-    .container-custom {
-      width: 60%;
-      margin: auto;
-      background: white;
-      padding: 20px;
-      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-    .header {
-      text-align: center;
-      padding: 10px;
-    }
-    .header img {
-      height: 60px;
-    }
-    .form-group {
-      margin-bottom: 15px;
-    }
-    label {
-      font-weight: bold;
-    }
-    input, textarea, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    input[type="text"][name="nomor_penghubung"] {
-      /* Pattern to start with +62 or 62 and contain 8-15 digits */
-      pattern: "\+?62[0-9]{8,15}";
-      title: "Nomor harus dimulai dengan +62 atau 62 dan mengandung 8-15 angka.";
-    }
-    .toggle-container {
-      display: flex;
-      gap: 10px;
-    }
-    .toggle-btn {
-      flex: 1;
-      background-color: #ddd;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    .toggle-btn.active {
-      background-color: #007bff;
-      color: white;
-    }
-    .upload-container {
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .upload-box {
-      width: 100px;
-      height: 100px;
-      border: 2px dashed #ccc;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      border-radius: 5px;
-      overflow: hidden;
-      position: relative;
-    }
-    .upload-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: none;
-    }
-    .upload-box span {
-      position: absolute;
-      font-size: 2rem;
-      color: #ccc;
-    }
-    .submit-btn {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    .footer {
-      background-color: #007bff;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      margin-top: 20px;
-      border-radius: 0 0 10px 10px;
-    }
-  </style>
-</head>
+
 <body class="bg-light">
   <div class="container py-5">
     <header class="d-flex justify-content-between align-items-center mb-4">
@@ -202,52 +94,71 @@
 </body>
 </html>
 
-<?php
-// Database connection
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "findit";
+<!DOCTYPE html>
+<html>
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindIT - Buat Laporan Baru</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+<body class="bg-light">
+    <div class="container py-5">
+        <header class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="text-primary">FindIT</h1>
+            <i class="bi bi-person-circle fs-2"></i>
+        </header>
 
-$jenis_laporan = $_POST['jenis_laporan'];
-$nama_barang = $_POST['nama_barang'];
-$nomor_penghubung = $_POST['nomor_penghubung'];
-$deskripsi_barang = $_POST['deskripsi_barang'];
+        <div class="card shadow p-4">
+            <h2 class="mb-4">Buat Laporan Baru</h2>
+        
+            <form action="model/report_process.php" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label>Jenis Laporan</label><br>
+                <input type="radio" name="jenis_laporan" value="Barang Hilang" required> Barang Hilang
+                <input type="radio" name="jenis_laporan" value="Barang Ditemukan"> Barang Ditemukan
+            </div>
 
-$target_dir = $_SERVER['DOCUMENT_ROOT'] . "/uploads/";
-$foto1 = uploadFile('foto1', $target_dir);
-$foto2 = uploadFile('foto2', $target_dir);
-$foto3 = uploadFile('foto3', $target_dir);
+            <div class="mb-3">
+                <label>Nama Barang</label>
+                <input type="text" name="nama_barang" class="form-control" required>
+            </div>
 
-$sql = "INSERT INTO findit_reports (jenis_laporan, nama_barang, nomor_penghubung, deskripsi_barang, foto1, foto2, foto3)
-        VALUES (?, ?, ?, ?, ?, ?, ?)";
+            <div class="mb-3">
+                <label>Nomor Penghubung</label>
+                <input type="text" name="nomor_penghubung" class="form-control" required>
+            </div>
 
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("sssssss", $jenis_laporan, $nama_barang, $nomor_penghubung, $deskripsi_barang, $foto1, $foto2, $foto3);
+            <div class="mb-3">
+                <label>Deskripsi Barang</label>
+                <textarea name="deskripsi_barang" class="form-control"></textarea>
+            </div>
 
-if ($stmt->execute()) {
-    echo "Report submitted successfully.";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
+            <div class="mb-3">
+                <label>Foto 1</label>
+                <input type="file" name="foto1" class="form-control">
+            </div>
 
-$stmt->close();
-$conn->close();
+            <div class="mb-3">
+                <label>Foto 2</label>
+                <input type="file" name="foto2" class="form-control">
+            </div>
 
-function uploadFile($input_name, $target_dir) {
-    if (isset($_FILES[$input_name]) && $_FILES[$input_name]['error'] == 0) {
-        $target_file = $target_dir . basename($_FILES[$input_name]['name']);
-        if (move_uploaded_file($_FILES[$input_name]['tmp_name'], $target_file)) {
-            return $target_file;
-        }
-    }
-    return null;
-}
-?>
+            <div class="mb-3">
+                <label>Foto 3</label>
+                <input type="file" name="foto3" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <footer class="text-center mt-4">
+        &copy; 2024 All rights reserved. FindIT.
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
 
