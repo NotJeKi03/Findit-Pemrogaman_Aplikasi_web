@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FindIt - Laporan Barang Hilang</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "findit-blue": "#008ECC",
+            },
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Ensure the body takes full height */
+      html,
+      body {
+        height: 100%;
+        margin: 0; /* Remove default margin */
+      }
+      /* Flexbox layout for the body */
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      /* Main content should grow to fill available space */
+      .content {
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body class="font-poppins bg-gray-50">
+    <!-- Header -->
+    <header
+      class="bg-white shadow-sm p-3 flex items-center justify-between fixed top-0 left-0 right-0 z-50"
+    >
+      <img src="logo.png" alt="Logo FindIt" class="w-32 h-auto" />
+      <nav class="flex-grow flex justify-center">
+        <ul class="flex space-x-6">
+          <li>
+            <a
+              href="caripage.html"
+              id="beranda-link"
+              class="text-black font-medium px-3 py-2 rounded hover:text-findit-blue"
+              onclick="disableButton('beranda-link')"
+              >Beranda</a
+            >
+          </li>
+          <li>
+            <a
+              href="tentang.html"
+              id="tentang-link"
+              class="text-black font-medium px-3 py-2 rounded hover:text-findit-blue"
+              onclick="disableButton('tentang-link')"
+              >Tentang</a
+            >
+          </li>
+          <li>
+            <a
+              href="kontak.html"
+              id="kontak-link"
+              class="text-black font-medium px-3 py-2 rounded hover:text-findit-blue"
+              onclick="disableButton('kontak-link')"
+              >Kontak</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <a
+          href="notifikasi.html"
+          id="Notif button"
+          class="text-gray-600 hover:text-findit-blue"
+        >
+          <i data-feather="bell"></i>
+        </a>
+        <a
+          href="profil.html"
+          id="Akun button"
+          class="text-gray-600 hover:text-findit-blue"
+        >
+          <i data-feather="user"></i>
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="content container mx-auto px-6 pt-24 pb-12">
+      <section class="mb-12">
+        <h3 class="text-[#008ECC] font-bold text-xl mb-4">
+          Laporan Barang Hilang
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+          <!-- Row 1 -->
+          <div
+            class="card p-4 bg-white shadow rounded-lg hover:shadow-md transition-shadow"
+          >
+            <img
+              src="airpods.jpg"
+              alt="AirPods Pro"
+              class="w-full h-40 object-contain rounded mb-3"
+            />
+            <div class="card-body">
+              <p class="font-semibold text-gray-800">AirPods Pro</p>
+              <p class="text-gray-500 text-sm">Case Putih dengan Custom</p>
+            </div>
+          </div>
+          <div
+            class="card p-4 bg-white shadow rounded-lg hover:shadow-md transition-shadow"
+          >
+            <img
+              src="ktm.png"
+              alt="Kartu Mahasiswa"
+              class="w-full h-40 object-contain rounded mb-3"
+            />
+            <div class="card-body">
+              <p class="font-semibold text-gray-800">Kartu Mahasiswa</p>
+              <p class="text-gray-500 text-sm">Atas Nama Dini</p>
+            </div>
+          </div>
+          <div
+            class="card p-4 bg-white shadow rounded-lg hover:shadow-md transition-shadow"
+          >
+            <img
+              src="watch.jpg"
+              alt="Jam Tangan Apple Watch"
+              class="w-full h-40 object-contain rounded mb-3"
+            />
+            <div class="card-body">
+              <p class="font-semibold text-gray-800">Jam Tangan Apple Watch</p>
+              <p class="text-gray-500 text-sm">Strap Putih</p>
+            </div>
+          </div>
+          <div
+            class="card p-4 bg-white shadow rounded-lg hover:shadow-md transition-shadow"
+          >
+            <img
+              src="buku.png"
+              alt="Buku Catatan"
+              class="w-full h-40 object-contain rounded mb-3"
+            />
+            <div class="card-body">
+              <p class="font-semibold text-gray-800">Buku Catatan</p>
+              <p class="text-gray-500 text-sm">Ditemukan di Stasiun</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+          <div
+            class="card p-4 bg-white shadow rounded-lg hover:shadow-md transition-shadow"
+          >
+            <img
+              src="airpods.jpg"
+              alt="AirPods Pro"
+              class="w-full h-40 object-contain rounded mb-3"
+            />
+            <div class="card-body">
+              <p class="font-semibold text-gray-800">AirPods Pro</p>
+              <p class="text-gray-500 text-sm">Case Putih dengan Custom</p>
+            </div>
+          </div>
+          <div
+            class="card p-4 bg-white shadow rounded-lg hover:shadow-md transition-shadow"
+          >
+            <img
+              src="ktm.png"
+              alt="Kartu Mahasiswa"
+              class="w-full h-40 object-contain rounded mb-3"
+            />
+            <div class="card-body">
+              <p class="font-semibold text-gray-800">Kartu Mahasiswa</p>
+              <p class="text-gray-500 text-sm">Atas Nama Dini</p>
+            </div>
+          </div>
+          <div
+            class="card p-4 bg-white shadow rounded-lg hover:shadow-md transition-shadow"
+          >
+            <img
+              src="watch.jpg"
+              alt="Jam Tangan Apple Watch"
+              class="w-full h-40 object-contain rounded mb-3"
+            />
+            <div class="card-body">
+              <p class="font-semibold text-gray-800">Jam Tangan Apple Watch</p>
+              <p class="text-gray-500 text-sm">Strap Putih</p>
+            </div>
+          </div>
+          <div
+            class="card p-4 bg-white shadow rounded-lg hover:shadow-md transition-shadow"
+          >
+            <img
+              src="buku.png"
+              alt="Buku Catatan"
+              class="w-full h-40 object-contain rounded mb-3"
+            />
+            <div class="card-body">
+              <p class="font-semibold text-gray-800">Buku Catatan</p>
+              <p class="text-gray-500 text-sm">Ditemukan di Stasiun</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+          <div
+            class="card p-4 bg-white shadow rounded-lg hover:shadow-md transition-shadow"
+          >
+            <img
+              src="airpods.jpg"
+              alt="AirPods Pro"
+              class="w-full h-40 object-contain rounded mb-3"
+            />
+            <div class="card-body">
+              <p class="font-semibold text-gray-800">AirPods Pro</p>
+              <p class="text-gray-500 text-sm">Case Putih dengan Custom</p>
+            </div>
+          </div>
+          <div
+            class="card p-4 bg-white shadow rounded-lg hover:shadow-md transition-shadow"
+          >
+            <img
+              src="ktm.png"
+              alt="Kartu Mahasiswa"
+              class="w-full h-40 object-contain rounded mb-3"
+            />
+            <div class="card-body">
+              <p class="font-semibold text-gray-800">Kartu Mahasiswa</p>
+              <p class="text-gray-500 text-sm">Atas Nama Dini</p>
+            </div>
+          </div>
+          <div
+            class="card p-4 bg-white shadow rounded-lg hover:shadow-md transition-shadow"
+          >
+            <img
+              src="watch.jpg"
+              alt="Jam Tangan Apple Watch"
+              class="w-full h-40 object-contain rounded mb-3"
+            />
+            <div class="card-body">
+              <p class="font-semibold text-gray-800">Jam Tangan Apple Watch</p>
+              <p class="text-gray-500 text-sm">Strap Putih</p>
+            </div>
+          </div>
+          <div
+            class="card p-4 bg-white shadow rounded-lg hover:shadow-md transition-shadow"
+          >
+            <img
+              src="buku.png"
+              alt="Buku Catatan"
+              class="w-full h-40 object-contain rounded mb-3"
+            />
+            <div class="card-body">
+              <p class="font-semibold text-gray-800">Buku Catatan</p>
+              <p class="text-gray-500 text-sm">Ditemukan di Stasiun</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+          <div
+            class="card p-4 bg-white shadow rounded-lg hover:shadow-md transition-shadow"
+          >
+            <img
+              src="airpods.jpg"
+              alt="AirPods Pro"
+              class="w-full h-40 object-contain rounded mb-3"
+            />
+            <div class="card-body">
+              <p class="font-semibold text-gray-800">AirPods Pro</p>
+              <p class="text-gray-500 text-sm">Case Putih dengan Custom</p>
+            </div>
+          </div>
+          <div
+            class="card p-4 bg-white shadow rounded-lg hover:shadow-md transition-shadow"
+          >
+            <img
+              src="ktm.png"
+              alt="Kartu Mahasiswa"
+              class="w-full h-40 object-contain rounded mb-3"
+            />
+            <div class="card-body">
+              <p class="font-semibold text-gray-800">Kartu Mahasiswa</p>
+              <p class="text-gray-500 text-sm">Atas Nama Dini</p>
+            </div>
+          </div>
+          <div
+            class="card p-4 bg-white shadow rounded-lg hover:shadow-md transition-shadow"
+          >
+            <img
+              src="watch.jpg"
+              alt="Jam Tangan Apple Watch"
+              class="w-full h-40 object-contain rounded mb-3"
+            />
+            <div class="card-body">
+              <p class="font-semibold text-gray-800">Jam Tangan Apple Watch</p>
+              <p class="text-gray-500 text-sm">Strap Putih</p>
+            </div>
+          </div>
+          <div
+            class="card p-4 bg-white shadow rounded-lg hover:shadow-md transition-shadow"
+          >
+            <img
+              src="buku.png"
+              alt="Buku Catatan"
+              class="w-full h-40 object-contain rounded mb-3"
+            />
+            <div class="card-body">
+              <p class="font-semibold text-gray-800">Buku Catatan</p>
+              <p class="text-gray-500 text-sm">Ditemukan di Stasiun</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-findit-blue text-white py-12 w-full">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div>
+            <div class="footer-logo flex items-center mb-6">
+              <h2 class="text-3xl font-bold text-white">FindIt</h2>
+            </div>
+            <div class="space-y-3 mb-6 text-center md:text-left">
+              <h4 class="font-semibold mb-4">Kontak Kami</h4>
+              <div class="flex items-center space-x-3">
+                <i data-feather="message-circle" class="w-4 h-4"></i>
+                <div>
+                  <p class="text-sm">WhatsApp</p>
+                  <p class="text-sm">+1 202-918-2132</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i data-feather="phone" class="w-4 h-4"></i>
+                <div>
+                  <p class="text-sm">Call Us</p>
+                  <p class="text-sm">+1 202-918-2132</p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h4 class="font-semibold mb-4">Download App</h4>
+              <div
+                class="app-download flex space-x-3 justify-center md:justify-start"
+              >
+                <a href="#" class="flex items-center space-x-2">
+                  <img
+                    src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                    alt="App Store"
+                    class="h-10 cursor-pointer hover:opacity-80 transition-opacity"
+                  />
+                </a>
+                <a href="#" class="flex items-center space-x-2">
+                  <img
+                    src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                    alt="Google Play"
+                    class="h-10 cursor-pointer hover:opacity-80 transition-opacity"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-6">Layanan Pelanggan</h4>
+            <ul class="space-y-3 text-sm">
+              <li>
+                <a href="tentang.html" class="hover:underline">Tentang Kami</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline">Syarat & Ketentuan</a>
+              </li>
+              <li><a href="#" class="hover:underline">Kebijakan Privasi</a></li>
+              <li><a href="#" class="hover:underline">Pusat Bantuan</a></li>
+              <li><a href="#" class="hover:underline">Pertanyaan Umum</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-6">Kategori Terpopuler</h4>
+            <ul class="space-y-3 text-sm">
+              <li>
+                <a href="#" class="hover:underline">Cari Barang Hilang</a>
+              </li>
+              <li><a href="#" class="hover:underline">Laporkan Temuan</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="footer-divider border-t border-white border-opacity-20 mt-8 pt-6 text-center"
+        >
+          <p class="text-sm opacity-80">
+            © 2025 FindIt. Hak cipta dilindungi undang-undang.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      feather.replace();
+      function disableButton(buttonId) {
+        console.log("Button clicked:", buttonId);
+      }
+    </script>
+  </body>
+</html>
