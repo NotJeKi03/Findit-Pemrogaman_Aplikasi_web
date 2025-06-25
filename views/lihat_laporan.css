@@ -1,0 +1,70 @@
+body {
+    background-color: #f0f8ff; /* putih kebiruan, warna latar */
+    color: #003366; /* biru tua untuk teks */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+    /* Header Styling */
+header {
+    background: #f8f8f8;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+  /* Flexbox for Logo and User Icon */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h2 {
+    color: #004080;
+    margin-bottom: 20px;
+}
+
+.table {
+    background-color: #ffffff; /* latar tabel putih */
+}
+
+.table thead th {
+    background-color: #007bff; /* biru bootstrap */
+    color: white;
+    border-color: #0056b3;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #e6f0ff; /* biru muda untuk baris ganjil */
+}
+
+.table-hover tbody tr:hover {
+    background-color: #cce0ff; /* warna hover biru muda */
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    background-color: #007bff !important;
+    color: white !important;
+    border-radius: 4px;
+    border: none;
+    margin: 0 2px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background-color: #0056b3 !important;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.dataTables_length select {
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    padding: 4px;
+}

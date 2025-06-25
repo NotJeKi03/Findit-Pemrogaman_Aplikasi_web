@@ -1,24 +1,37 @@
 <?php
 session_start();
-include 'config.php';
+include 'DB_Connection.php'; // or your DB connection
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
-    $password = $_POST['password']; 
+  $email = $_POST['email'];
+  $password = $_POST['password'];
 
-    $result = mysqli_query($conn, "SELECT * FROM daftar WHERE email='$email'");
-    $row = mysqli_fetch_assoc($result);
+  // Query to check user
+  $query = "SELECT * FROM account WHERE email='$email' AND password='$password'";
+  $result = mysqli_query($conn, $query);
 
-    if ($row) {
-        if ($password === $row['password']) {
-            $_SESSION['user_id'] = $row['id'];
-            $_SESSION['user_name'] = $row['name'];
-            echo "<script>alert('Login berhasil!'); window.location='caripage.html';</script>";
-        } else {
-            echo "<script>alert('Password salah!'); window.location='login.html';</script>";
-        }
+  if (mysqli_num_rows($result) == 1) {
+    $user = mysqli_fetch_assoc($result);
+
+    // If you're using password_hash, use password_verify here
+    if ($password === $user['password']) {
+      $_SESSION['user_id'] = $user['id'];
+      $_SESSION['user_name'] = $user['name'];
+      $_SESSION['Status'] = $user['Status']; // admin or user
+
+      // Redirect based on status
+      if ($user['Status'] === 'admin') {
+        header("Location: ../views/lihat_laporan.php");
+      } else {
+        header("Location: ../views/caripage.php");
+      }
+      exit();
     } else {
-        echo "<script>alert('Email tidak terdaftar!'); window.location='login.html';</script>";
+      echo "Incorrect password.";
     }
+  } else {
+    echo "Email not found.";
+  }
 }
 ?>
+

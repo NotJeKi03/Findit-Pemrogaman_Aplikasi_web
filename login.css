@@ -1,0 +1,80 @@
+/* Logo image at the top */
+.logo-top {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -6rem;
+}
+
+.logo-main {
+  width: 32rem;
+}
+
+/* Login container */
+.login-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Style for the login section container (where form and welcome text are) */
+.login-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  border: 2px solid #b9b9b9; /* Blue border */
+  border-radius: 1rem;
+  background-color: #ffffff;
+  max-width: 60rem; /* Optional: controls width */
+  font-size: 1.1rem; /* Make base text slightly larger */
+  box-shadow: 0 0 15px rgba(68, 68, 68, 0.05); /* Optional soft shadow */
+}
+
+/* Optional: Increase form labels font size and boldness */
+.login-box p,
+.login-box label {
+  font-size: 1.1rem;
+}
+
+@media (min-width: 768px) {
+  .login-container {
+    flex-direction: row-reverse;
+    gap: 0.75rem;
+    transform: scale(0.7);
+  }
+}
+
+/* Typography */
+.heading {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
+
+/* Input styling */
+.input-style {
+  border: 1px solid #e5e7eb;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+/* Button styling */
+.login-button {
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  margin-top: -0.5rem;
+  cursor: pointer;
+}
+
+
+/* Other */
+.password-toggle {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+}
